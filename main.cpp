@@ -1,3 +1,4 @@
+hola que tal como estas
 #include <iostream>
 #include <fstream>
 #include <list>
