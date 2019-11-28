@@ -11,7 +11,7 @@ const string VuelosPlantilla = "ID";
 typedef list<string> TipoLista;
 
 
-class Reservarciones
+class ManejarArchivo
 {
 private:
     char const *FicheroNombre;
@@ -28,18 +28,18 @@ public:
 
 };
 
-void Reservarciones::NombreFichero(string datos){
+void ManejarArchivo::NombreFichero(string datos){
     FicheroNombre=datos.c_str();
 }
 
-void Reservarciones::CrearArchivo(string datos){
+void ManejarArchivo::CrearArchivo(string datos){
     FicheroSalida.open(FicheroNombre);
     FicheroSalida<<datos<<"\n";
     FicheroSalida.close();
 }
 
 
-void Reservarciones::AgregarUsuario(string User){
+void ManejarArchivo::AgregarUsuario(string User){
     TipoLista Lista = Leer();
     FicheroSalida.open(FicheroNombre);
     Lista.push_back(User);
@@ -50,13 +50,13 @@ void Reservarciones::AgregarUsuario(string User){
     FicheroSalida.close();
 }
 
-void Reservarciones::BuscarLinea(){
+void ManejarArchivo::BuscarLinea(){
 
 
 
 }
 
-TipoLista Reservarciones::Leer(){
+TipoLista ManejarArchivo::Leer(){
     TipoLista Lista;
     string buffer;
     FicheroEntrada.open(FicheroNombre);
@@ -75,11 +75,11 @@ TipoLista Reservarciones::Leer(){
 
 int main()
 {
-    Reservarciones reservaciones;
+    ManejarArchivo reservaciones;
     TipoLista n;
     TipoLista z;
     string Plantilla_Vuelos[4] = {"ID: ", "Origen: ", "Destino: ", "Distancia: "};
-    string Plantilla_Usuario[4] = {"ID_Pasaporte: ", "Nombres: ", "Apellidos: ", "Año Nacimiento: "};
+    string Plantilla_Usuario[4] = {"ID_Pasaporte: ", "Nombres: ", "Apellidos: ", "AÃ±o Nacimiento: "};
     string in;
     string send="";
 
@@ -100,6 +100,7 @@ int main()
 
 
     reservaciones.AgregarUsuario("numero de pasaporte");
+
     n = reservaciones.Leer();
     list<string>::iterator iterador;
 
