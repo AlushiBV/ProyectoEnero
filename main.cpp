@@ -85,7 +85,7 @@ int main()
 {
     ManejarArchivo Reservar;
     TipoLista Lista;
-    string Plantilla_Vuelos[5] = {"ID: ", "Origen: ", "Destino: ", "Distancia: ","####################### PASAJEROS ########################"};
+    string Plantilla_Vuelos[8] = {"ID: ", "Fecha del viaje: " , "Origen: ", "Destino: ", "Asiento: " , "Aerolinea: " , "Distancia: " , "####################### PASAJEROS ########################"};
     string Plantilla_Usuario[4] = {"ID_Pasaporte: ", "Nombres: ", "Apellidos: ", "Año Nacimiento: "};
     string LeidoDesdeConsola;
     string DatosParaGuardar="";
@@ -104,12 +104,12 @@ int main()
     }
     else{
 	    DatosParaGuardar = (Plantilla_Vuelos[0] + LeidoDesdeConsola)+"\n";
-	    for(int i=1; i<4; i++){
+	    for(int i=1; i<7; i++){
 	        cout<< Plantilla_Vuelos[i];
 	        cin>> LeidoDesdeConsola;
 	        DatosParaGuardar = DatosParaGuardar + (Plantilla_Vuelos[i] + LeidoDesdeConsola) + "\n";
     	}
-    DatosParaGuardar = DatosParaGuardar + Plantilla_Vuelos[4];
+    DatosParaGuardar = DatosParaGuardar + Plantilla_Vuelos[7];
     cout<< DatosParaGuardar;
     Reservar.CrearFichero(DatosParaGuardar);
     }
